@@ -5,8 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
   <title>Bookmark!</title>
 
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+  <!--FIREBASE-->
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/8.2.1/firebase-app.js"></script>
   <!-- include only the Firebase features as you need -->
@@ -18,10 +24,13 @@
 
 <body>
   <div ng-app="myApp" ng-controller="signinCtrl">
-    <h1>Welcome to <span>Bookmark!</span></h1>
-    <button ng-show="!user" ng-click="googlesignin()">Sign-in with Google</button>
-    
-    <h2 ng-show="user">Signed in with: {{ user }}</h2>
+    <div id="intro">
+      <h2>Welcome to</h2>
+      <h1>Bookmark!</h1>
+      <button id="googleSignIn" ng-show="!user" ng-click="googlesignin()">Sign-in with Google</button>
+    </div>
+    <h2 ng-show="user">Signed in with: {{ user }}</h2>  
+  
   </div>
 
   <script>
@@ -50,6 +59,7 @@
     });
 
   </script>
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 </body>
 

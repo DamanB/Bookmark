@@ -1,0 +1,49 @@
+:root{
+    --primColor:rgb(153, 35, 163);
+    --secColor:rgb(0, 102, 255);
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+} 
+
+#intro{
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+#intro h1{
+    font-size: 70px;
+    margin: 0 0 20px 0;
+    color: var(--primColor);
+    font-style: italic;
+
+}
+
+#intro h2{
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    color: var(--primColor);
+}
+
+#googleSignIn{
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: white;
+    color: black;
+
+    border: 2px solid var(--primColor);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+#googleSignIn:hover {
+    background-color: var(--primColor);
+    color: white;
+}
