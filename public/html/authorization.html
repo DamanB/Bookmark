@@ -1,0 +1,32 @@
+<html>
+<div class="authorizations-container">
+
+    <div id="login-container" class="box-container">
+        <div class="container-content auth-container">
+            <form name="loginForm">
+                <span class="authTitle">Login!</span>
+                <label>Email: 
+                    <input type="email" name="useremail" ng-model="useremail" required>
+                </label>
+                <label>Password: 
+                    <input type="password" name="userpassword" ng-model="userpassword" ng-minlength="6" required>
+                </label>
+                <button class="authbutton" ng-model="submitLogin">Login!</button>
+            </form>
+        </div>
+        <div class="container-bottom"></div>
+    </div>
+
+    <div id="register-container" class="box-container">
+        <div class="container-content auth-container">
+            <form name="registerForm">
+                <label>
+                    <span class="authTitle">Join Here!</span>
+                </label>
+        </div>
+        <div class="container-bottom"></div>
+    </div>
+
+</div>
+
+</html>

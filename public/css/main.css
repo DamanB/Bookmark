@@ -17,7 +17,7 @@ body {
     text-align: center;
     background-color: white;
     box-shadow: 0 8px 10px rgb(177, 177, 177);
-
+    border-radius: 5px;
 }
 
 #title{
@@ -47,31 +47,10 @@ body {
     color: var(--mainColor);
 }
 
-#authDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.authbutton{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-
-    background-color: white;
+#intro h3{
+    margin: 35px 0 10px 0;
+    font-size: 25px;
     color: var(--mainColor);
-    border-radius: 5px;
-
-    border: 2px solid var(--mainColor);
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
-
-.authbutton:hover {
-    background-color: var(--mainColor);
-    color: white;
 }
 
 #signIn{
@@ -95,5 +74,7 @@ body {
     background-color: var(--mainColor);
     color: white;
 }
+
+
 
 

@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  
+  <link rel="stylesheet" href="css/container.css">
+  <link rel="stylesheet" href="css/authorization.css">
+
+
   <title>Bookmark!</title>
 
   <!--FONTS-->
@@ -28,21 +31,20 @@
     <div ng-include="'html/navbar.html'"></div>
     <div id="intro">
       <h2>Welcome to</h2>
-      <div id="title"><img src="img/icons/bookmark-blue.png"><h1>BookmarkHere!</h1></div>
-      <div id="authDiv">
-        <button id="signIn" class="authbutton" ng-show="!user" ng-click="signin()">Sign-in</button>
-        <button id="signUp" class="authbutton" ng-show="!user" ng-click="signin()">Register</button>
+      <div id="title"><img src="img/icons/bookmark-blue.png">
+        <h1>BookmarkHere!</h1>
       </div>
+      <h3>Login or register to see your bookmarks!</h3>
     </div>
-    <h2 ng-show="user">Signed in with: {{ user }}</h2>  
-  
+    <div ng-include="'html/authorization.html'"></div>
+
   </div>
 
   <script>
     var app = angular.module('myApp', []);
     app.controller('signinCtrl', function ($scope) {
       $scope.signin = function () {
-        
+
       };
     });
 

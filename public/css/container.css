@@ -1,0 +1,31 @@
+.box-container{
+    position: relative;
+    margin: 2%;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 8px 10px rgb(177, 177, 177);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 500px;
+    min-height: 400px;
+}
+
+.container-content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 99%;
+    background-color: transparent;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.container-bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--secColor) 0, var(--primColor) 66%, var(--thirColor) 100%);
+    min-width: 100%;
+    height: 1%;
+}
