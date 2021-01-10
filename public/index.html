@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
+  
   <title>Bookmark!</title>
 
   <!--FONTS-->
@@ -24,10 +25,14 @@
 
 <body>
   <div ng-app="myApp" ng-controller="signinCtrl">
+    <div ng-include="'html/navbar.html'"></div>
     <div id="intro">
       <h2>Welcome to</h2>
-      <h1>Bookmark!</h1>
-      <button id="googleSignIn" ng-show="!user" ng-click="googlesignin()">Sign-in with Google</button>
+      <div id="title"><img src="img/icons/bookmark-blue.png"><h1>BookmarkHere!</h1></div>
+      <div id="authDiv">
+        <button id="signIn" class="authbutton" ng-show="!user" ng-click="signin()">Sign-in</button>
+        <button id="signUp" class="authbutton" ng-show="!user" ng-click="signin()">Register</button>
+      </div>
     </div>
     <h2 ng-show="user">Signed in with: {{ user }}</h2>  
   
@@ -36,31 +41,12 @@
   <script>
     var app = angular.module('myApp', []);
     app.controller('signinCtrl', function ($scope) {
-      $scope.googlesignin = function () {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        provider.addScope('https://www.googleapis.com/auth/userinfo.email');
-        firebase.auth().signInWithPopup(provider).then(function (result) {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
-          // The signed-in user info.
-          var user = result.user;
-          $scope.user = user.email;
-          $scope.$apply();
-        }).catch(function (error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-        });
+      $scope.signin = function () {
+        
       };
     });
 
   </script>
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-
 </body>
 
 </html>

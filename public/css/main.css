@@ -1,49 +1,99 @@
 :root{
+    --mainColor: rgb(9, 26, 73);
     --primColor:rgb(153, 35, 163);
     --secColor:rgb(0, 102, 255);
+    --thirColor: orange;
 }
-
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(212, 212, 212);
+    margin: 0px;
 } 
 
 #intro{
-    margin-top: 10%;
-    width: 100%;
+    margin: 10% 2% 2% 2%;
+    padding: 5% 1%; 
     text-align: center;
+    background-color: white;
+    box-shadow: 0 8px 10px rgb(177, 177, 177);
+
+}
+
+#title{
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title img{
+    width: auto;
+    height: 100px;
+    margin-right: 20px;
 }
 
 #intro h1{
-    font-size: 70px;
-    margin: 0 0 20px 0;
-    color: var(--primColor);
+    color: var(--mainColor);
     font-style: italic;
-
+    font-size: 70px;
+    margin: 0 0 0 0;
 }
 
 #intro h2{
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     font-size: 30px;
-    color: var(--primColor);
+    color: var(--mainColor);
 }
 
-#googleSignIn{
-    padding: 10px 20px;
+#authDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.authbutton{
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
 
     background-color: white;
-    color: black;
+    color: var(--mainColor);
+    border-radius: 5px;
 
-    border: 2px solid var(--primColor);
+    border: 2px solid var(--mainColor);
     cursor: pointer;
     transition-duration: 0.4s;
 }
 
-#googleSignIn:hover {
-    background-color: var(--primColor);
+.authbutton:hover {
+    background-color: var(--mainColor);
     color: white;
 }
+
+#signIn{
+    font-size: 18px;
+    padding: 10px 40px;
+
+}
+
+#signUp{
+    margin-top: 15px;
+    padding: 5px 20px;
+    background-color: white;
+    color: var(--mainColor);
+
+    border: 2px solid var(--mainColor);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+#signUp:hover {
+    background-color: var(--mainColor);
+    color: white;
+}
+
+
