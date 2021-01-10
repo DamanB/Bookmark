@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/container.css">
   <link rel="stylesheet" href="css/authorization.css">
 
-
   <title>Bookmark!</title>
 
   <!--FONTS-->
@@ -27,7 +26,7 @@
 </head>
 
 <body>
-  <div ng-app="myApp" ng-controller="signinCtrl">
+  <div ng-app="myApp" ng-controller="authCntrl">
     <div ng-include="'html/navbar.html'"></div>
     <div id="intro">
       <h2>Welcome to</h2>
@@ -40,15 +39,8 @@
 
   </div>
 
-  <script>
-    var app = angular.module('myApp', []);
-    app.controller('signinCtrl', function ($scope) {
-      $scope.signin = function () {
-
-      };
-    });
-
-  </script>
+  <!--ANGULAR CONTROLLER-->
+  <script src="controller/authenticationCntrl.js"></script> 
 </body>
 
 </html>

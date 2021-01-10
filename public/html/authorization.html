@@ -5,11 +5,12 @@
         <div class="container-content auth-container">
             <form name="loginForm">
                 <span class="authTitle">Login!</span>
-                <label>Email: 
-                    <input type="email" name="useremail" ng-model="useremail" required>
+                <label>Email:
+                    <input type="email" name="loginemail" ng-model="loginemail" required>
+                    <!--<span ng-show="loginForm.loginemail.$error.required">Email is required.</span>-->
                 </label>
-                <label>Password: 
-                    <input type="password" name="userpassword" ng-model="userpassword" ng-minlength="6" required>
+                <label>Password:
+                    <input type="password" name="loginpassword" ng-model="loginpassword" ng-minlength="6" required>
                 </label>
                 <button class="authbutton" ng-model="submitLogin">Login!</button>
             </form>
@@ -20,13 +21,22 @@
     <div id="register-container" class="box-container">
         <div class="container-content auth-container">
             <form name="registerForm">
-                <label>
-                    <span class="authTitle">Join Here!</span>
+                <span class="authTitle">Join Here!</span>
+                <label>Email:
+                    <input type="email" name="regemail" ng-model="regemail" required>
                 </label>
+                <label>Password:
+                    <input type="password" name="regpassword" ng-model="regpassword" ng-minlength="6" required>
+                    <span style="font-size: 12px;"><i>*Mininmum 6 characters long</i></span>
+                </label>
+                <label>Confirm Password:
+                    <input type="password" name="regpasswordconfirm" ng-model="regpasswordconfirm" ng-minlength="6"
+                        required>
+                </label>
+                <button class="authbutton" ng-model="submitReg">Join!</button>
+            </form>
         </div>
         <div class="container-bottom"></div>
     </div>
-
 </div>
-
 </html>
