@@ -50,3 +50,12 @@
     background-color: var(--mainColor);
     color: white;
 }
+
+.authInfo{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.authError{
+    color: red;
+}
