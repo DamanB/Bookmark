@@ -12,12 +12,18 @@ body {
 } 
 
 #intro{
-    margin: 10% 2% 2% 2%;
+    position: relative;
+    margin: 7% 0 2% 0;
     padding: 5% 1%; 
     text-align: center;
     background-color: white;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     box-shadow: 0 8px 10px rgb(177, 177, 177);
     border-radius: 5px;
+
+    color:var(--mainColor);
 }
 
 #title{
@@ -35,22 +41,20 @@ body {
 }
 
 #intro h1{
-    color: var(--mainColor);
-    font-style: italic;
     font-size: 70px;
     margin: 0 0 0 0;
 }
 
 #intro h2{
+    font-style: italic;
     margin: 0 0 20px 0;
     font-size: 30px;
-    color: var(--mainColor);
 }
 
 #intro h3{
+    font-style: italic;
     margin: 35px 0 10px 0;
     font-size: 25px;
-    color: var(--mainColor);
 }
 
 #signIn{
@@ -73,6 +77,15 @@ body {
 #signUp:hover {
     background-color: var(--mainColor);
     color: white;
+}
+
+.intro-bottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--secColor) 0, var(--primColor) 66%, var(--thirColor) 100%);
+    min-width: 100%;
+    height: 0.5%;
 }
 
 
