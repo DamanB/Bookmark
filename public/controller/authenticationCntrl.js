@@ -1,4 +1,4 @@
-angular.module('myApp', []).controller('authCntrl', function ($scope) {
+angular.module('myApp', []).controller('authCntrl', function ($scope, UserService) {
   $scope.loginUser = function () {
     var email = $scope.loginemail;
     var password = $scope.loginpassword;
@@ -6,8 +6,8 @@ angular.module('myApp', []).controller('authCntrl', function ($scope) {
       .then((user) => {
         $scope.loginErrorMsg = '';
         $scope.loginSuccessMsg = 'Success!';
-        $scope.$apply();
-        
+        $scope.$apply();         
+        UserService.login(user);        
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -37,8 +37,8 @@ angular.module('myApp', []).controller('authCntrl', function ($scope) {
         $scope.regErrorMsg = '';
         $scope.regSuccessMsg = 'Success!';
         $scope.$apply();
-        // Signed in 
-        // ...
+        UserService.login(user);     
+
       })
       .catch((error) => {
         var errorCode = error.code;
