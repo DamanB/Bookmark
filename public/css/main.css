@@ -26,7 +26,7 @@ body {
     color:var(--mainColor);
 }
 
-#title{
+#title-container{
     padding: 0;
     margin: 0 0 30px 0;
     display: flex;
@@ -34,7 +34,7 @@ body {
     align-items: center;
 }
 
-#title img{
+#title-container img{
     width: auto;
     height: 100px;
     margin-right: 20px;
@@ -57,29 +57,7 @@ body {
     font-size: 25px;
 }
 
-#signIn{
-    font-size: 18px;
-    padding: 10px 40px;
-
-}
-
-#signUp{
-    margin-top: 15px;
-    padding: 5px 20px;
-    background-color: white;
-    color: var(--mainColor);
-
-    border: 2px solid var(--mainColor);
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
-
-#signUp:hover {
-    background-color: var(--mainColor);
-    color: white;
-}
-
-.intro-bottom{
+#intro-bottom{
     position: absolute;
     left: 0;
     bottom: 0;

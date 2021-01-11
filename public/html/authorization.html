@@ -1,5 +1,5 @@
 <html>
-<div class="authorizations-container">
+<div class="authorizations-container" ng-controller="authCntrl">
 
     <div id="login-container" class="box-container">
         <div class="container-content auth-container">
@@ -14,7 +14,11 @@
                     <input type="password" name="loginpassword" ng-model="loginpassword" required>
                     <span class="authInfo authError" ng-show="loginForm.loginpassword.$touched && loginForm.loginpassword.$invalid">Password is required</span>
                 </label>
-                <button ng-model="submitLogin" ng-disabled="loginForm.$invalid">Login!</button>
+                <label>
+                    <button name="submit" ng-click="loginUser()" ng-model="submitLogin" ng-disabled="loginForm.$invalid">Login!</button>
+                    <span class="authInfo authError"> {{ loginErrorMsg }} </span>
+                    <span class="authInfo authSuccess"> {{ loginSuccessMsg }} </span>
+                </label>
             </form>
         </div>
         <div class="container-bottom"></div>
@@ -37,7 +41,11 @@
                     <input type="password" name="regpasswordconfirm" ng-model="regpasswordconfirm" ng-minlength="6" required>
                     <span class="authInfo authError" ng-show="registerForm.regpasswordconfirm.$touched && regpassword != regpasswordconfirm">Passwords must match</span>
                 </label>
-                <button ng-model="submitReg" ng-disabled="registerForm.$invalid || regpassword != regpasswordconfirm">Join!</button>
+                <label>
+                    <button ng-click="registerUser()" ng-model="submitReg" ng-disabled="registerForm.$invalid || regpassword != regpasswordconfirm">Join!</button>
+                    <span class="authInfo authError"> {{ regErrorMsg }} </span>
+                    <span class="authInfo authSuccess"> {{ regSuccessMsg }} </span>
+                </label>
             </form>
         </div>
         <div class="container-bottom"></div>

@@ -59,3 +59,7 @@
 .authError{
     color: red;
 }
+
+.authSuccess{
+    color: green;
+}
