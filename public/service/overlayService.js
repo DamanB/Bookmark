@@ -17,7 +17,7 @@ angular.module('myApp').factory('OverlayService', function() {
             return "Fetching your account...";
         },
         msgLoginSuccess: function(){
-            return "Login Successfull!...";
+            return "Login Successfull...";
         },
         msgUserData: function(){
             return "Opening your bookmarks!...";

@@ -14,7 +14,7 @@ angular.module('myApp').controller('overlayCntrl',['$rootScope', '$scope', '$tim
         $timeout(function(){
             $scope.overlay.overlayMessage = "";
             $scope.showOverlay = false;
-        },0);
+        },50);
     });
 
 }]);

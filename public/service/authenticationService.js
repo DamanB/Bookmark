@@ -1,21 +1,21 @@
-angular.module('myApp').factory('UserService', function() {
-    var currentUser = {}; 
-    var userLoggedIn;
+angular.module('myApp').factory('UserService', function () {
+    var currentUser = {};
+    var userLoggedIn = false;
 
     return {
-        login: function(user){
+        login: function (user) {
             currentUser.email = user.user.email;
-            currentUser.uid = user.user.uid; 
+            currentUser.uid = user.user.uid;
             userLoggedIn = true;
         },
-        currentUser: function(){
+        currentUser: function () {
             return currentUser;
         },
-        logout: function(){
+        logout: function () {
             currentUser = {};
             userLoggedIn = false;
         },
-        userLoggedIn: function() {
+        userLoggedIn: function () {
             return userLoggedIn;
         }
     };

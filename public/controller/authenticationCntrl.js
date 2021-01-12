@@ -1,25 +1,34 @@
 angular.module('myApp').controller('authCntrl', ['$rootScope', '$scope', '$timeout', 'UserService', 'OverlayService', function ($rootScope, $scope, $timeout, UserService, OverlayService) {
+  
+  //Form messages
   $scope.message = {
     loginErrorMsg: '',
     loginSuccessMsg: '',
     regErrorMsg: '',
     regSuccessMsg: ''
   };
+
   $scope.loginUser = function () {
     //Display overlay
     $rootScope.$emit('displayOverlay', OverlayService.msgLoginAttempting());
     //Gather form data
     var email = $scope.loginemail;
     var password = $scope.loginpassword;
+
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => {
-        $rootScope.$emit('displayOverlay', OverlayService.msgLoginUserAccount());
         //Login success
+        $rootScope.$emit('displayOverlay', OverlayService.msgLoginUserAccount());
+        //Msg the form
         $timeout(function () {
           $scope.message.loginErrorMsg = '';
           $scope.message.loginSuccessMsg = 'Success!';
         }, 0);
+        //Log the user in the service
+        UserService.login(user);
         $rootScope.$emit('displayOverlay', OverlayService.msgLoginSuccess());
+
+        
       })
       .catch((error) => {
         //Login fail
@@ -47,17 +56,22 @@ angular.module('myApp').controller('authCntrl', ['$rootScope', '$scope', '$timeo
     //Gather form data
     var email = $scope.regemail;
     var password = $scope.regpassword;
+
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
+        //reg successfull
         $rootScope.$emit('displayOverlay', OverlayService.msgRegisterUserAccount());
+        //let the form know
         $timeout(function () {
           $scope.message.regErrorMsg = '';
           $scope.message.regSuccessMsg = 'Success!';
         }, 0);
-        $rootScope.$emit('displayOverlay', OverlayService.msgRegisterSuccess());
+        //log the user in to the service
         UserService.login(user);
+        $rootScope.$emit('displayOverlay', OverlayService.msgRegisterSuccess());
       })
       .catch((error) => {
+        //reg failed
         var errorCode = error.code;
         var errorMessage = error.message;
         $timeout(function () {

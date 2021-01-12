@@ -1,11 +1,20 @@
 <link rel="stylesheet" href="css/nav.css">
 <nav>
-<div id="navfront">
-    <div id="navlogo">
-        <img src="img/icons/bookmark-white.png">
-        <span id="navtitle">BookmarkHere!</span></div>
-    <div></div>
-    <div></div>
-</div>
-</nav>
+    <div id="navfront">
+        <div id="navlogo">
+            <img src="img/icons/bookmark-white.png">
+            <span id="navtitle">BookmarkHere!</span>
+        </div>
+    </div>
+    <div id="navbottom"></div>
+    <div id="navsecondary" ng-show="$root.authenticated">
+        {{ $root.authenticated }}
+        <ul id="tabs">
+            <li ng-click="">Series</li>
+            <li>Movies</li>
+            <li>Books</li>
 
+        </ul>
+    </div>
+
+</nav>
