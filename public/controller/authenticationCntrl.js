@@ -50,24 +50,28 @@ angular.module('myApp').controller('authCntrl', ['$rootScope', '$scope', '$timeo
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
         $rootScope.$emit('displayOverlay', OverlayService.msgRegisterUserAccount());
-        $scope.message.regErrorMsg = '';
-        $scope.message.regSuccessMsg = 'Success!';
+        $timeout(function () {
+          $scope.message.regErrorMsg = '';
+          $scope.message.regSuccessMsg = 'Success!';
+        }, 0);
         $rootScope.$emit('displayOverlay', OverlayService.msgRegisterSuccess());
         UserService.login(user);
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        $scope.message.registertrationSuccessMsg = '';
-        if (errorCode == 'auth/email-already-in-use') {
-          $scope.message.regErrorMsg = "Email already in use!";
-        }
-        else if (errorCode == 'auth/invalid-email') {
-          $scope.message.regErrorMsg = "This email is not valid!";
-        }
-        else {
-          $scope.message.regErrorMsg = "Registration unsuccessful!";
-        }
+        $timeout(function () {
+          $scope.message.registertrationSuccessMsg = '';
+          if (errorCode == 'auth/email-already-in-use') {
+            $scope.message.regErrorMsg = "Email already in use!";
+          }
+          else if (errorCode == 'auth/invalid-email') {
+            $scope.message.regErrorMsg = "This email is not valid!";
+          }
+          else {
+            $scope.message.regErrorMsg = "Registration unsuccessful!";
+          }
+        }, 0);
       });
     $rootScope.$emit('clearOverlay');
   }
