@@ -1,4 +1,3 @@
-<html>
 <div class="authorizations-container" ng-controller="authCntrl">
 
     <div id="login-container" class="box-container">
@@ -16,8 +15,8 @@
                 </label>
                 <label>
                     <button name="submit" ng-click="loginUser()" ng-model="submitLogin" ng-disabled="loginForm.$invalid">Login!</button>
-                    <span class="authInfo authError"> {{ loginErrorMsg }} </span>
-                    <span class="authInfo authSuccess"> {{ loginSuccessMsg }} </span>
+                    <span class="authInfo authError"> {{ message.loginErrorMsg }} </span>
+                    <span class="authInfo authSuccess"> {{ message.loginSuccessMsg }} </span>
                 </label>
             </form>
         </div>
@@ -43,12 +42,11 @@
                 </label>
                 <label>
                     <button ng-click="registerUser()" ng-model="submitReg" ng-disabled="registerForm.$invalid || regpassword != regpasswordconfirm">Join!</button>
-                    <span class="authInfo authError"> {{ regErrorMsg }} </span>
-                    <span class="authInfo authSuccess"> {{ regSuccessMsg }} </span>
+                    <span class="authInfo authError"> {{ message.regErrorMsg }} </span>
+                    <span class="authInfo authSuccess"> {{ message.regSuccessMsg }} </span>
                 </label>
             </form>
         </div>
         <div class="container-bottom"></div>
     </div>
 </div>
-</html>

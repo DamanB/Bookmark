@@ -29,7 +29,7 @@
 <body>
   <div ng-app="myApp" #id="app">
     <div ng-include="'html/navbar.html'"></div>
-    <div ng-include="'html/overlayLoading.html'"></div>
+    <div ng-include="'html/overlay.html'"></div>
 
     <div id="welcome-page">
       <div ng-include="'html/intro.html'"></div>
@@ -37,10 +37,14 @@
     </div>
 
   </div>
+
     <!--ANGULAR CONTROLLER-->
+    <script src="controller/myAppControllers.js"></script> 
+    <script src="controller/overlayCntrl.js"></script> 
     <script src="controller/authenticationCntrl.js"></script> 
     <!--ANGULAR SERVICES-->
     <script src="service/authenticationService.js"></script> 
+    <script src="service/overlayService.js"></script> 
 
 </body>
 
