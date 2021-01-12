@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/container.css">
   <link rel="stylesheet" href="css/authorization.css">
+  <link rel="stylesheet" href="css/overlay.css">
 
   <title>Bookmark!</title>
 
@@ -26,8 +27,9 @@
 </head>
 
 <body>
-  <div ng-app="myApp">
+  <div ng-app="myApp" #id="app">
     <div ng-include="'html/navbar.html'"></div>
+    <div ng-include="'html/overlayLoading.html'"></div>
 
     <div id="welcome-page">
       <div ng-include="'html/intro.html'"></div>
