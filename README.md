@@ -1,4 +1,4 @@
-# IMPORTANT
+# Important!
 I've decided to migrate the development of BookmarkHere to the Vue.js framework instead.  Find the GitHub repository for the new BookmarkHere site here: https://github.com/DamanB/BookmarkHere 
 
 # BookmarkHere! 
