@@ -7,3 +7,9 @@ Find the deployed version here: https://bookmark-aa50e.web.app/
 
 ## Development Tools
 This web app is built using AngularJS, and Firebase web hosting
+
+## What I Learned
+- AngularJS
+- Firebase
+  - hosting the web app
+  - deploying authentication web services
